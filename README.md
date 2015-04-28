@@ -35,6 +35,8 @@ The 300x250 (medium rectangle) on the right is identified as zoneid 2
 
 # Async tag instructions
 
+File: public/javascripts/async-tag.js
+
 There are two async tags on the page already ( outlined w/ the grey border )
 
 The tags setup the following parameters (zoneid, width, height) then run the "async tag" via the script element below.
@@ -69,6 +71,8 @@ bootstrap the sync tag w/ the zone/tags configuration settings.
 
 # Adtag instructions
 
+File: public/javascripts/adtag.js
+
 The adtag will collect it's configuration properties and some basic information such as the page URL
 and frame depth before making a call to the "adserver".
 
@@ -101,6 +105,8 @@ the loc and the results of isWhitelisted into the tag's div.  You can use simple
 ===========
 
 # WhitelistManager
+
+File: app/util/WhitelistManager.java
 
 In app/util/WhitelistManager there is a simple class to check a loc/url for membership on a whitelist
 

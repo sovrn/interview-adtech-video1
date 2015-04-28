@@ -26,7 +26,7 @@ public class WhitelistManager {
      * A whitelist entry of <"zoo.com", TRUE> would match "zoo.com",
      * "bird.zoo.com", "eagle.bird.zoo.com", etc.
      *
-     * For the purposes of this code test, use dependency injection to
+     * Bonus Points - For the purposes of this code test, use dependency injection to
      * supply the whitelist to this class.
      */
     private Map<String, Boolean> whitelist;
