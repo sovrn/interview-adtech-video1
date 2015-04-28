@@ -1,4 +1,4 @@
-AdTech Coding Project for the Video Position
+# AdTech Coding Project for the Video Position
 
 In this project you'll be putting together a simple ad workflow.  The workflow starts off with async tags
 on a fake blog.  The async tags create a friendly iframe and put the real ad tag into the friendly iframe.  The adtag
@@ -8,15 +8,15 @@ should define a callback for this method and write the results to the ad tag.
 
 ===========
 
+# Prerequisites
+
 To complete this project you will need:
 
 * A local install of the Play framework https://www.playframework.com/download
 * Java 1.7 (1.6 and 1.8 may work, but so far we've been using 1.7)
 * git
 
-===========
-
-Instructions
+# Instructions
 
 * Fork this repository and clone it.
 * Download and install the Play Framework
