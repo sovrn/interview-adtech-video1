@@ -1,8 +1,8 @@
 # AdTech Coding Project for the Video Position
 
 In this project you'll be putting together a simple ad workflow.  The workflow starts off with async tags
-on a fake blog.  The async tags create a friendly iframe and put the real ad tag into the friendly iframe.  The adtag
-code then collects the page url / loc and frame_depth and passes it into the adserver's addelivery method.  The
+on a fake blog.  The async tags will need to create a friendly iframe and put the full ad tag into the friendly iframe.
+The adtag code then collects the page url / loc and frame_depth and passes it into the adserver's addelivery method.  The
 addelivery method then checks the page url / loc against a whitelist and returns a jsonp response.  The adtag code
 should define a callback for this method and write the results to the ad tag.
 
@@ -30,7 +30,14 @@ The main view is defined in index.scala.html
 The top ad unit is 728x90 (leaderboard) and is identified as zoneid 1
 The 300x250 (medium rectangle) on the right is identified as zoneid 2
 
-Both tags setup the following parameters (zoneid, width, height) then run the "async tag"
+
+===========
+
+# Async tag instructions
+
+There are two async tags on the page already ( outlined w/ the grey border )
+
+The tags setup the following parameters (zoneid, width, height) then run the "async tag" via the script element below.
 
 ```
 <!-- sovrn test ad unit -->
@@ -42,48 +49,54 @@ Both tags setup the following parameters (zoneid, width, height) then run the "a
 <script type="text/javascript" src="@routes.Assets.at("javascripts/async-tag.js")"></script>
 ```
 
-===========
+If you look at your console log you'll see the following:
 
-# Async tag instructions
+```
+Async call for zoneid 1
+Async call for zoneid 2
+```
 
-The async tag creates an iframe to make the ad call asynchronous and bootstraps the sync tag w/ the zone/tags
-configuration settings
+Those msgs are from the skeleton async tag running.
+
+You will need to complete the async tag (async-tag.js) by creating an iframe to make the ad call asynchronous and
+bootstrap the sync tag w/ the zone/tags configuration settings.
 
 * Using the ad tag configuration (zoneid, width, height) create a friendly iframe on the publisher's page
-* Inside the iframe load a script whose src is adtag.js ( Using document write )
+* Inside the iframe load a script element whose src is adtag.js ( Using document write )
 * Pass any configuration data to adtag.js so that it can use the params
 
 ===========
 
-# adtag instructions
+# Adtag instructions
 
 The adtag will collect it's configuration properties and some basic information such as the page URL
-and frame depth before making a call to the adserver for advertising.
+and frame depth before making a call to the "adserver".
 
 * Collect configuration parameters from the async-tag.js
 * BONUS - Determine frame depth ( How many iframes nested is the tag )
 * Determine the page URL
 * Make a JSONP request to adserver and pass along all of the above parameters:
 
+Here's an example of the URL you will be using:
+
 http://localhost:9000/addelivery/1/720/90/1/http%3A%2F%2Flocalhost%3A9000%2F
 
-If you look at the conf/routes file you'll see that URL contains parameters
-
+If you look at the conf/routes file you'll see that URL contains the following parameters
 ```
 /addelivery/:zoneid/:width/:height/:framedepth/:loc
 ```
 
-You will be using the loc on the back-end to see if it's in the whitelist.
-
 If you go the above URL you'll see:
-
 ```
 renderads({"zoneid":1,"isWhitelisted":false});
 ```
 
-The back-end handler always returns false for now.
+The page url / loc that you determine in Javascript should be encoded and passed into the back-end addelivery endpoint.
+Note: The back-end handler always returns false for now.  You will be filling the class out to check against a real
+whitelist.
 
-* Define a method renderads for the callback and write the loc and the results of isWhitelisted into the tag's div.
+* In the adtag.js code you will also need to define a method called "renderads" for the callback and write
+the loc and the results of isWhitelisted into the tag's div.  You can use simple span or other inline elements.
 
 ===========
 
