@@ -1,0 +1,104 @@
+@(title: String)
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>@title</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">AdTech</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Lambs<span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">Puppies</a></li>
+                        <li><a href="#">Kittens</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h4>728x90 Ad1</h4>
+                    <div class="ad-unit ad-leaderboard">
+                        <!-- sovrn test ad unit -->
+                        <script type="text/javascript">
+                            var sovrn_zoneid = 1;
+                            var sovrn_width = 728;
+                            var sovrn_height = 90;
+                        </script>
+                        <script type="text/javascript" src="@routes.Assets.at("javascripts/async-tag.js")"></script>
+                    </div>
+                </div>
+            <div>
+
+            <div class="row">
+                <div class="col-sm-8">
+                    <h1 class="blog-title">Test Blog</h1>
+                    <p class="lead blog-description">Fake blog for testing.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-8 blog-main">
+                    <div class="blog-post">
+                        <h2 class="blog-post-title">One cute photo that will make you say "awww"</h2>
+                        <p class="blog-post-meta">January 1, 2015 by <a href="#">QA</a></p>
+                        <p>Mr "Lampchops" was taken from PInterest.</p>
+                        <div>
+                            <img src="@routes.Assets.at("images/lampchop-baby2.jpg")">
+                        </div>
+                        <br/>
+                        <blockquote>
+                            <p>
+                               Et novum deserunt ius, tantas euismod persecuti te nam. Te illum saperet voluptua mei, natum idque intellegebat sed et.
+                               Ei inimicus torquatos cum, eu qui <strong>lamb</strong> porro falli platonem, et debet senserit usu. Referrentur theophrastus ei sea.
+                               Mucius ancillae deleniti has ne.
+                            </p>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+                    <div>
+                        <h4>300x250 Ad2</h4>
+                        <div class="ad-unit ad-med-rect">
+                            <!-- sovrn test ad unit -->
+                            <script type="text/javascript">
+                                var sovrn_zoneid = 2;
+                                var sovrn_width = 300;
+                                var sovrn_height = 250;
+                            </script>
+                            <script type="text/javascript" src="@routes.Assets.at("javascripts/async-tag.js")"></script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- container -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    </body>
+</html>
